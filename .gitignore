@@ -1,52 +1,24 @@
-# Prerequisites
-*.d
+#include <stdio.h>
+#include <math.h>
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+int main() {
+    double numero;
+    printf("Digite um numero positivo maior que zero: ");
+    scanf("%lf", &numero);
 
-# Linker output
-*.ilk
-*.map
-*.exp
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
-
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+    if (numero <= 0) {
+        printf("O numero invalido, informe um numero maior que zero.\n");
+    } else {
+        double quadrado = numero * numero;
+        double cubo = numero * numero * numero;
+        double raiz_quadrada = sqrt(numero);
+        double raiz_cubica = cbrt(numero);
+        int resto_divisao_por_3 = (int)numero % 3;
+        printf("1) O numero ao quadrado: %.2lf\n", quadrado);
+        printf("2) O numero ao cubo: %.2lf\n", cubo);
+        printf("3) A raiz quadrada do numero: %.2lf\n", raiz_quadrada);
+        printf("4) A raiz cubica do numero: %.2lf\n", raiz_cubica);
+        printf("5) O resto da divisao por 3: %d\n", resto_divisao_por_3);
+    }
+    return 0;
+}
